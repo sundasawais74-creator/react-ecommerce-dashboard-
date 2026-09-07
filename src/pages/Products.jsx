@@ -1,48 +1,36 @@
-function Products() {
-  const products = [
-    { id: 1, name: "Headphones", img: "🎧" },
-    { id: 2, name: "Smart Watch", img: "⌚" },
-    { id: 3, name: "Keyboard", img: "⌨️" },
-    { id: 4, name: "Mouse", img: "🖱️" },
-    { id: 5, name: "Printer", img: "🖨️" },
-    { id: 6, name: "iPad", img: "📱" },
-    { id: 7, name: "Laptop", img: "💻" },
-    { id: 8, name: "Camera", img: "📷" },
-    { id: 9, name: "Speaker", img: "🔊" },
-    { id: 10, name: "Monitor", img: "🖥️" },
-    { id: 11, name: "Gaming Console", img: "🎮" },
-    { id: 12, name: "Tablet", img: "📟" },
-    { id: 13, name: "Webcam", img: "📹" },
-    { id: 14, name: "Microphone", img: "🎤" }
-  ]
+import React from 'react';
 
+const products = [
+  { id: 1, tag: "REACT + FRONTEND", title: "E-Commerce Store", desc: "A clean shopping experience with product cards, search and cart-ready UI.", icon: "🛍️" },
+  { id: 2, tag: "REACT + BUSINESS", title: "Creative Agency", desc: "Modern agency landing page designed to convert visitors into clients.", icon: "✨" },
+  { id: 3, tag: "REACT + ADMIN", title: "Dashboard UI", desc: "Responsive dashboard concept with cards, analytics and reusable components.", icon: "📊" },
+  { id: 4, tag: "UI + DESIGN", title: "Landing Pages", desc: "Fast, focused landing pages designed to present your service and drive action.", icon: "🚀" },
+];
+
+const Products = () => {
   return (
-    <div className="container">
-      <div className="header">
+    <div className="pro-container">
+      <div className="pro-top">
         <div>
-          <h1>Products</h1>
-          <p>Manage and monitor all your products.</p>
+          <p className="pro-small">03 — SELECTED WORK</p>
+          <h1>Recent <span>products.</span></h1>
         </div>
-        <button className="btn-blue">+ Add Product</button>
+        <p className="pro-side-text">A few concepts showing the kind of work I can create for clients.</p>
       </div>
 
-      <div className="stats">
-        <div className="stat-card"><p>Total Products</p><h2>{products.length}</h2></div>
-        <div className="stat-card"><p>In Stock</p><h2>245</h2></div>
-        <div className="stat-card"><p>Low Stock</p><h2>42</h2></div>
-        <div className="stat-card"><p>Out of Stock</p><h2>33</h2></div>
-      </div>
-
-      <div className="product-grid">
-        {products.map(p => 
-          <div key={p.id} className="product-card">
-            <div className="product-img">{p.img}</div>
-            <h3>{p.name}</h3>
+      <div className="pro-grid">
+        {products.map(p => (
+          <div key={p.id} className="pro-card">
+            <p className="pro-tag">{p.tag}</p>
+            <div className="pro-icon">{p.icon}</div>
+            <h3>{p.title}</h3>
+            <p className="pro-desc">{p.desc}</p>
+            <a href="#" className="pro-link">View project →</a>
           </div>
-        )}
+        ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Products
+export default Products;
