@@ -6,7 +6,7 @@ export default function WeatherApp() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
+  const API_KEY = d6df250f418198c7ea01eabc54595e6e;
 
   const getWeather = async () => {
     if (!city) {
